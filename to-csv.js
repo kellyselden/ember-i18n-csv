@@ -1,12 +1,13 @@
 var fs = require('fs');
 var path = require('path');
 var stringify = require('csv-stringify');
+var argv = require('yargs').argv;
 require('6to5/register');
 
-var localesPath = process.argv[2];
-var csvPath = process.argv[3];
+var localesPath = argv._[0];
+var csvPath = argv._[1];
 
-var locales = fs.readdirSync(localesPath, 'utf8');
+var locales = fs.readdirSync(localesPath);
 
 var keys = [];
 var rows = [];
@@ -61,5 +62,5 @@ for (var i in keys) {
 }
 
 stringify(lines, function(err, csv) {
-  fs.writeFileSync(csvPath, csv, 'utf8');
+  fs.writeFileSync(csvPath, csv);
 });

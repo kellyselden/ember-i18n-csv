@@ -2,9 +2,11 @@ var fs = require('fs');
 var path = require('path');
 var parse = require('csv-parse');
 var EOL = require('os').EOL;
+var argv = require('yargs').argv;
 
-var csvPath = process.argv[2];
-var localesPath = process.argv[3];
+var csvPath = argv._[0];
+var localesPath = argv._[1];
+var ignoreJshint = argv['jshint-ignore'];
 
 var csv = fs.readFileSync(csvPath, 'utf8');
 
@@ -44,9 +46,9 @@ parse(csv, function(err, lines) {
     var filePath = path.join(localesPath, locale,  'translations.js');
     var jsonString = JSON.stringify(objs[columnIndex], null, 2);
     var string = 'export default ' + jsonString + ';' + EOL;
-    if (true) {
+    if (ignoreJshint) {
       string = '/* jshint ignore:start */' + EOL + EOL + string + EOL + '/* jshint ignore:end */' + EOL;
     }
-    fs.writeFileSync(filePath, string, 'utf8');
+    fs.writeFileSync(filePath, string);
   }
 });
