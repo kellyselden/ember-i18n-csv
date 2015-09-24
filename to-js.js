@@ -7,6 +7,7 @@ var argv = require('yargs').argv;
 var csvPath = argv._[0];
 var localesPath = argv._[1];
 var ignoreJshint = argv['jshint-ignore'];
+var excelFriendly = argv['excel-friendly'];
 
 var csv = fs.readFileSync(csvPath, 'utf8');
 
@@ -26,6 +27,11 @@ parse(csv, function(err, lines) {
       }
       recurse(keySections.slice(1), obj[key], value);
     } else {
+      if (excelFriendly) {
+        if (['\'true', '\'false'].indexOf(value.toLowerCase()) !== -1) {
+          value = value.substr(1);
+        }
+      }
       obj[key] = value;
     }
   }

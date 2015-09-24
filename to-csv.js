@@ -6,6 +6,7 @@ require('6to5/register');
 
 var localesPath = argv._[0];
 var csvPath = argv._[1];
+var excelFriendly = argv['excel-friendly'];
 
 var locales = fs.readdirSync(localesPath);
 
@@ -34,6 +35,11 @@ function recurse(json, columnIndex, rowIndex, currentKey) {
       }
       for (var i in locales) {
         if (i == columnIndex) {
+          if (excelFriendly) {
+            if (['true', 'false'].indexOf(value.toLowerCase()) !== -1) {
+              value = '\'' + value;
+            }
+          }
           row[i] = value;
         } else if (!row[i]) {
           row[i] = '';
