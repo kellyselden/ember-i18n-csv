@@ -1,7 +1,7 @@
 {
   "name": "ember-cli-csv",
   "version": "0.0.1",
-  "description": "Create a CSV file to manage your translations",
+  "description": "JSON to CSV and vice-versa for ember-i18n",
   "main": "to-csv.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
