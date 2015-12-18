@@ -6,6 +6,7 @@ require('6to5/register');
 
 var localesPath = argv._[0];
 var csvPath = argv._[1];
+var onlyMissing = argv['only-missing'];
 
 var locales = fs.readdirSync(localesPath);
 
@@ -58,7 +59,9 @@ for (var columnIndex in locales) {
 var lines = [];
 lines.push(['key'].concat(locales.map(function(locale) { return locale.replace('.js', ''); })));
 for (var i in keys) {
-  lines.push([keys[i]].concat(rows[i]));
+  if(!onlyMissing || rows[i].indexOf('') > -1) {
+	lines.push([keys[i]].concat(rows[i]));
+  }
 }
 
 stringify(lines, function(err, csv) {
