@@ -17,11 +17,11 @@ parse(csv, function(err, lines) {
 
   var objs = [];
   for (var i in locales) {
-	var obj = {};
-	if(merge){
-		var filePath = path.join(localesPath, locales[i], 'translations.js');
-		obj = require(filePath);
-	}
+    var obj = {};
+    if(merge){
+      var filePath = path.join(localesPath, locales[i], 'translations.js');
+      obj = require(filePath);
+    }
     objs.push(obj);
   }
 

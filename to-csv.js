@@ -60,7 +60,7 @@ var lines = [];
 lines.push(['key'].concat(locales.map(function(locale) { return locale.replace('.js', ''); })));
 for (var i in keys) {
   if(!onlyMissing || rows[i].indexOf('') > -1) {
-	lines.push([keys[i]].concat(rows[i]));
+    lines.push([keys[i]].concat(rows[i]));
   }
 }
 
