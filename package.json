@@ -6,6 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kellyselden/ember-i18n-csv.git"
+  },
   "author": "Kelly Selden <kellyselden@gmail.com> (https://github.com/kellyselden)",
   "license": "MIT",
   "dependencies": {
