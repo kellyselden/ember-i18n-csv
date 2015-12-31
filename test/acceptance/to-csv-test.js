@@ -24,7 +24,7 @@ describe('to-csv', function() {
       var ps = spawn(process.execPath, [
         // path.resolve(__dirname, '../bin/cmd.js'),
         'to-csv',
-        'test/fixtures/locales',
+        path.resolve(process.cwd(), 'test/fixtures/locales'),
         'tmp/i18n.csv',
       ]);
 
@@ -34,6 +34,9 @@ describe('to-csv', function() {
       ps.stderr.on('data', function(buffer) { err += buffer; });
 
       ps.on('exit', function(code) {
+        console.log(out);
+        expect(err).to.be.falsy;
+        expect(code).to.equal(0);
         fs.readFile('tmp/i18n.csv', 'utf-8', function(err, actual) {
           expect(err).to.be.falsy;
           fs.readFile('test/fixtures/i18n.csv', 'utf-8', function(err, expected) {
@@ -42,8 +45,6 @@ describe('to-csv', function() {
             done();
           });
         });
-        expect(err).to.be.falsy;
-        expect(code).to.equal(0);
       });
     });
   });
