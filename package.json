@@ -5,7 +5,7 @@
   "main": "to-csv.js",
   "scripts": {
     "test": "mocha test/**/*-test.js",
-    "cover": "istanbul cover node_modules/mocha/bin/_mocha -- test/**/*-test.js"
+    "cover": "istanbul cover node_modules/mocha/bin/_mocha --include-all-sources true -- test/**/*-test.js"
   },
   "repository": {
     "type": "git",
