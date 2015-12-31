@@ -1,6 +1,7 @@
 var fs = require('fs');
 var path = require('path');
 var stringify = require('csv-stringify');
+var eol = require('eol');
 var argv = require('yargs').argv;
 require('6to5/register');
 
@@ -62,5 +63,6 @@ for (var i in keys) {
 }
 
 stringify(lines, function(err, csv) {
-  fs.writeFileSync(csvPath, csv);
+  var normalized = eol.auto(csv);
+  fs.writeFileSync(csvPath, normalized);
 });
