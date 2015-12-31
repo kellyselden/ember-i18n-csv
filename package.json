@@ -20,7 +20,6 @@
     "yargs": "^3.0.0"
   },
   "devDependencies": {
-    "codeclimate-test-reporter": "^0.1.1",
     "coveralls": "^2.0.0",
     "istanbul": "0.4.1",
     "mocha": "^2.0.0"
