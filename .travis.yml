@@ -10,3 +10,10 @@ node_js:
 cache:
   directories:
     - node_modules
+
+script:
+  - npm run cover
+
+after_script:
+  - cat coverage/lcov.info | codeclimate
+  - cat coverage/lcov.info | node_modules/coveralls/bin/coveralls

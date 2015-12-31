@@ -4,7 +4,8 @@
   "description": "JSON to CSV and vice-versa for ember-i18n",
   "main": "to-csv.js",
   "scripts": {
-    "test": "mocha test/acceptance/*.js"
+    "test": "mocha test/acceptance/*.js",
+    "cover": "istanbul cover node_modules/mocha/bin/_mocha -- test/acceptance/*.js"
   },
   "repository": {
     "type": "git",
@@ -19,6 +20,9 @@
     "yargs": "^3.0.0"
   },
   "devDependencies": {
+    "codeclimate-test-reporter": "^0.1.1",
+    "coveralls": "^2.0.0",
+    "istanbul": "0.4.1",
     "mocha": "^2.0.0"
   }
 }
