@@ -1,0 +1,31 @@
+environment:
+  matrix:
+  # node.js
+  - nodejs_version: "0.10"
+  - nodejs_version: "0.11"
+  - nodejs_version: "0.12"
+  - nodejs_version: "4"
+  - nodejs_version: "5"
+  # io.js
+  - nodejs_version: "1.0"
+
+platform:
+  - x86
+  - x64
+
+# Install scripts. (runs after repo cloning)
+install:
+  - ps: Install-Product node $env:nodejs_version $env:platform
+  - npm install
+
+# Post-install test scripts.
+test_script:
+  - node --version
+  - npm --version
+  - npm test
+
+cache:
+  - node_modules
+
+# Don't actually build.
+build: off
