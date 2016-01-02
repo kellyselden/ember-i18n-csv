@@ -16,6 +16,7 @@ describe('Array', function() {
 
 describe('to-csv', function() {
   it('should return -1 when the value is not present', function(done) {
+    this.timeout(5000);
     // process.chdir(__dirname);
 
     fs.mkdir('tmp', function(err) {
