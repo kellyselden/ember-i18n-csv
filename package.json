@@ -4,8 +4,8 @@
   "description": "JSON to CSV and vice-versa for ember-i18n",
   "main": "to-csv.js",
   "scripts": {
-    "test": "eslint-mocha test/**/*-test.js",
-    "cover": "istanbul cover node_modules/eslint-mocha/index.js --include-all-sources true -- test/**/*-test.js"
+    "test": "eslint-mocha --eslint-args=\"lib/**/*.js test/acceptance/**/*.js\" --mocha-args=\"test/**/*-test.js\"",
+    "cover": "istanbul cover node_modules/eslint-mocha/bin/eslint-mocha.js --include-all-sources true -- --eslint-args=\"lib/**/*.js test/acceptance/**/*.js\" --mocha-args=\"test/**/*-test.js\""
   },
   "repository": {
     "type": "git",
@@ -23,9 +23,7 @@
   "devDependencies": {
     "chai": "^3.0.0",
     "coveralls": "^2.0.0",
-    "eslint": "^1.0.0",
-    "eslint-mocha": "0.0.1",
-    "istanbul": "0.4.1",
-    "mocha": "^2.0.0"
+    "eslint-mocha": "0.0.3",
+    "istanbul": "0.4.1"
   }
 }

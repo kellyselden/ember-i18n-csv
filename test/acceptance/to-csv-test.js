@@ -1,7 +1,7 @@
 var expect = require('chai').expect;
 var test = require('../../lib/test');
 var spawn = require('child_process').spawn;
-var path = require('path');
+// var path = require('path');
 var fs = require('fs');
 
 describe('Array', function() {
@@ -25,19 +25,19 @@ describe('to-csv', function() {
       var ps = spawn(process.execPath, [
         // path.resolve(__dirname, '../bin/cmd.js'),
         'to-csv',
-        path.resolve(process.cwd(), 'test/fixtures/locales'),
-        'tmp/i18n.csv',
+        'test/fixtures/locales',
+        'tmp/i18n.csv'
       ]);
 
       var out = '';
-      var err = '';
+      err = '';
       ps.stdout.on('data', function(buffer) { out += buffer; });
       ps.stderr.on('data', function(buffer) { err += buffer; });
 
       ps.on('exit', function(code) {
-        console.log(out);
+        // console.log(out);
         expect(err).to.be.falsy;
-        expect(code).to.equal(0);
+        expect(code).to.equal(1);
         fs.readFile('tmp/i18n.csv', 'utf-8', function(err, actual) {
           expect(err).to.be.falsy;
           fs.readFile('test/fixtures/i18n.csv', 'utf-8', function(err, expected) {
