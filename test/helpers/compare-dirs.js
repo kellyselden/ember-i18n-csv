@@ -1,6 +1,7 @@
 var dirCompare = require('dir-compare');
 
 var options = {
+  compareSize: false,
   compareContent: true
 };
 
