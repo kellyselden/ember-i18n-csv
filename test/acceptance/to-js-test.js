@@ -29,4 +29,27 @@ describe('to-js', function() {
       }).catch(done);
     });
   });
+
+  it('handles option --jshint-ignore', function(done) {
+    var ps = spawn(process.execPath, [
+      'to-js',
+      'test/fixtures/i18n.csv',
+      'tmp/locales',
+      '--jshint-ignore'
+    ]);
+
+    var out = '';
+    var err = '';
+    ps.stdout.on('data', function(buffer) { out += buffer; });
+    ps.stderr.on('data', function(buffer) { err += buffer; });
+
+    ps.on('exit', function() {
+      expect(out).to.equal('');
+      expect(err).to.equal('');
+      compareDirs('tmp/locales', 'test/fixtures/locales').then(function(areSame) {
+        expect(areSame).to.be.true;
+        done();
+      }).catch(done);
+    });
+  });
 });
