@@ -23,6 +23,7 @@
   "devDependencies": {
     "chai": "^3.0.0",
     "coveralls": "^2.0.0",
+    "dir-compare": "0.0.2",
     "eslint-mocha": "0.0.3",
     "fs-extra": "0.26.3",
     "istanbul": "0.4.1"

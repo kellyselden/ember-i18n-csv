@@ -1,7 +1,7 @@
 var fs = require('fs');
 var path = require('path');
 var parse = require('csv-parse');
-var EOL = require('os').EOL;
+var eol = require('eol');
 var argv = require('yargs').argv;
 
 var csvPath = argv._[0];
@@ -44,12 +44,17 @@ parse(csv, function(err, lines) {
 
   for (columnIndex in locales) {
     var locale = locales[columnIndex];
-    var filePath = path.join(localesPath, locale,  'translations.js');
-    var jsonString = JSON.stringify(objs[columnIndex], null, 2);
-    var string = 'export default ' + jsonString + ';' + EOL;
-    if (ignoreJshint) {
-      string = '/* jshint ignore:start */' + EOL + EOL + string + EOL + '/* jshint ignore:end */' + EOL;
+    var localePath = path.join(localesPath, locale);
+    if (!fs.existsSync(localePath)) {
+      fs.mkdirSync(localePath);
     }
+    var filePath = path.join(localePath,  'translations.js');
+    var jsonString = JSON.stringify(objs[columnIndex], null, 2);
+    var string = 'export default ' + jsonString + ';\n';
+    if (ignoreJshint) {
+      string = '/* jshint ignore:start */\n\n' + string + '\n/* jshint ignore:end */\n';
+    }
+    string = eol.auto(string);
     fs.writeFileSync(filePath, string);
   }
 });

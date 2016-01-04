@@ -1,29 +1,18 @@
 var expect = require('chai').expect;
-var test = require('../../lib/test');
 var spawn = require('child_process').spawn;
 var fs = require('fs-extra');
-var compareFiles = require('../helpers/compare-files');
+var compareDirs = require('../helpers/compare-dirs');
 
-describe('Array', function() {
-  describe('#indexOf()', function() {
-    it('should return -1 when the value is not present', function() {
-      test();
-      expect([1,2,3].indexOf(5)).to.equal(-1);
-      expect([1,2,3].indexOf(0)).to.equal(-1);
-    });
-  });
-});
-
-describe('to-csv', function() {
+describe('to-js', function() {
   beforeEach(function() {
-    fs.emptyDirSync('tmp');
+    fs.emptyDirSync('tmp/locales');
   });
 
   it('works', function(done) {
     var ps = spawn(process.execPath, [
-      'to-csv',
-      'test/fixtures/locales',
-      'tmp/i18n.csv'
+      'to-js',
+      'test/fixtures/i18n.csv',
+      'tmp/locales'
     ]);
 
     var out = '';
@@ -34,7 +23,7 @@ describe('to-csv', function() {
     ps.on('exit', function() {
       expect(out).to.equal('');
       expect(err).to.equal('');
-      compareFiles('tmp/i18n.csv', 'test/fixtures/i18n.csv').then(function(areSame) {
+      compareDirs('tmp/locales', 'test/fixtures/locales').then(function(areSame) {
         expect(areSame).to.be.true;
         done();
       }).catch(done);
