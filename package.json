@@ -2,7 +2,10 @@
   "name": "ember-cli-csv",
   "version": "0.0.1",
   "description": "JSON to CSV and vice-versa for ember-i18n",
-  "main": "to-csv.js",
+  "main": "lib/ember-i18n-csv.js",
+  "bin": {
+    "ember-i18n-csv": "bin/ember-i18n-csv.js"
+  },
   "scripts": {
     "test": "eslint-mocha --eslint-args=\"lib/**/*.js test/acceptance/**/*.js\" --mocha-args=\"test/**/*-test.js\"",
     "cover": "istanbul cover node_modules/eslint-mocha/bin/eslint-mocha.js --include-all-sources true -- --eslint-args=\"lib/**/*.js test/acceptance/**/*.js\" --mocha-args=\"test/**/*-test.js\""

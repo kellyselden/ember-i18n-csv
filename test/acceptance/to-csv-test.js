@@ -21,9 +21,10 @@ describe('to-csv', function() {
 
   it('works', function(done) {
     var ps = spawn(process.execPath, [
+      'bin/ember-i18n-csv.js',
       'to-csv',
-      'test/fixtures/locales',
-      'tmp/i18n.csv'
+      '--locales-path=test/fixtures/locales',
+      '--csv-path=tmp/i18n.csv'
     ]);
 
     var out = '';
