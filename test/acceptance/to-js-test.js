@@ -10,9 +10,10 @@ describe('to-js', function() {
 
   it('works', function(done) {
     var ps = spawn(process.execPath, [
+      'bin/ember-i18n-csv.js',
       'to-js',
-      'test/fixtures/i18n.csv',
-      'tmp/locales'
+      '--csv-path=test/fixtures/i18n.csv',
+      '--locales-path=tmp/locales'
     ]);
 
     var out = '';
@@ -32,9 +33,10 @@ describe('to-js', function() {
 
   it('handles option --jshint-ignore', function(done) {
     var ps = spawn(process.execPath, [
+      'bin/ember-i18n-csv.js',
       'to-js',
-      'test/fixtures/i18n.csv',
-      'tmp/locales',
+      '--csv-path=test/fixtures/i18n.csv',
+      '--locales-path=tmp/locales',
       '--jshint-ignore'
     ]);
 
@@ -46,7 +48,7 @@ describe('to-js', function() {
     ps.on('exit', function() {
       expect(out).to.equal('');
       expect(err).to.equal('');
-      compareDirs('tmp/locales', 'test/fixtures/locales').then(function(areSame) {
+      compareDirs('tmp/locales', 'test/fixtures/locales-jshint-ignore').then(function(areSame) {
         expect(areSame).to.be.true;
         done();
       }).catch(done);
