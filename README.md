@@ -1,6 +1,6 @@
 # ember-i18n-csv
 [![Build Status](https://travis-ci.org/kellyselden/ember-i18n-csv.svg?branch=master)](https://travis-ci.org/kellyselden/ember-i18n-csv)
-[![Build status](https://ci.appveyor.com/api/projects/status/v4eagpd8k731oyul?svg=true)](https://ci.appveyor.com/project/kellyselden/ember-i18n-csv)
+[![Build status](https://ci.appveyor.com/api/projects/status/v4eagpd8k731oyul/branch/master?svg=true)](https://ci.appveyor.com/project/kellyselden/ember-i18n-csv/branch/master)
 [![Code Climate](https://codeclimate.com/github/kellyselden/ember-i18n-csv/badges/gpa.svg)](https://codeclimate.com/github/kellyselden/ember-i18n-csv)
 [![Coverage Status](https://coveralls.io/repos/kellyselden/ember-i18n-csv/badge.svg?branch=master&service=github)](https://coveralls.io/github/kellyselden/ember-i18n-csv?branch=master)
 
