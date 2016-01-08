@@ -4,6 +4,9 @@
 [![Code Climate](https://codeclimate.com/github/kellyselden/ember-i18n-csv/badges/gpa.svg)](https://codeclimate.com/github/kellyselden/ember-i18n-csv)
 [![Coverage Status](https://coveralls.io/repos/kellyselden/ember-i18n-csv/badge.svg?branch=master&service=github)](https://coveralls.io/github/kellyselden/ember-i18n-csv?branch=master)
 
+[![Dependency Status](https://david-dm.org/kellyselden/ember-i18n-csv.svg)](https://david-dm.org/kellyselden/ember-i18n-csv)
+[![devDependency Status](https://david-dm.org/kellyselden/ember-i18n-csv/dev-status.svg)](https://david-dm.org/kellyselden/ember-i18n-csv#info=devDependencies)
+
 Export your ember-i18n localization files to a CSV file for translators:
 
 ```
