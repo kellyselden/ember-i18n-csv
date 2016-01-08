@@ -2,13 +2,19 @@
   "name": "ember-cli-csv",
   "version": "0.0.1",
   "description": "JSON to CSV and vice-versa for ember-i18n",
-  "main": "lib/ember-i18n-csv.js",
+  "main": "dist/ember-i18n-csv.js",
   "bin": {
     "ember-i18n-csv": "bin/ember-i18n-csv.js"
   },
   "scripts": {
-    "test": "eslint-mocha --eslint-args=\"lib/**/*.js test/acceptance/**/*.js\" --mocha-args=\"test/**/*-test.js\"",
-    "cover": "istanbul cover node_modules/eslint-mocha/bin/eslint-mocha.js --include-all-sources true -- --eslint-args=\"lib/**/*.js test/acceptance/**/*.js\" --mocha-args=\"test/**/*-test.js\""
+    "build": "babel lib -d dist",
+    "prepublish": "npm run build",
+    "pretest": "npm run build",
+    "precover": "npm run build",
+    "test": "eslint-mocha --eslint-args=\"@(bin|lib)/**/*.js test/!(fixtures)/**/*.js\" --mocha-args=\"--compilers js:babel-register test/**/*-test.js\"",
+    "cover": "babel-node node_modules/isparta/bin/isparta cover --include-all-sources --report html --report lcov node_modules/eslint-mocha/bin/eslint-mocha.js -- --eslint-args=\"@(bin|lib)/**/*.js test/!(fixtures)/**/*.js\" --mocha-args=\"--compilers js:babel-register test/**/*-test.js\"",
+    "debug": "node debug node_modules/mocha/bin/_mocha --no-timeouts --compilers js:babel-register \"test/integration/**/*-test.js\"",
+    "lint": "eslint \"@(bin|lib)/**/*.js\" \"test/!(fixtures)/**/*.js\""
   },
   "repository": {
     "type": "git",
@@ -16,19 +22,28 @@
   },
   "author": "Kelly Selden <kellyselden@gmail.com> (https://github.com/kellyselden)",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kellyselden/ember-i18n-csv/issues"
+  },
+  "homepage": "https://github.com/kellyselden/ember-i18n-csv#readme",
   "dependencies": {
     "6to5": "^3.5.3",
     "csv-parse": "0.0.6",
     "csv-stringify": "0.0.6",
+    "denodeify": "^1.0.0",
     "eol": "0.2.0",
+    "promise": "^7.0.0",
     "yargs": "^3.0.0"
   },
   "devDependencies": {
+    "babel-cli": "^6.0.0",
+    "babel-preset-es2015": "^6.0.0",
+    "babel-preset-stage-2": "^6.0.0",
+    "babel-register": "^6.0.0",
     "chai": "^3.0.0",
     "coveralls": "^2.0.0",
-    "dir-compare": "0.0.2",
-    "eslint-mocha": "0.0.3",
-    "fs-extra": "0.26.4",
-    "istanbul": "0.4.1"
+    "eslint-mocha": "0.0.4",
+    "fs-equal": "0.0.1",
+    "isparta": "^4.0.0"
   }
 }

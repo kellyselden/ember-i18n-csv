@@ -1,3 +1,9 @@
+ecmaFeatures:
+  modules: true
+  blockBindings: true
+  arrowFunctions: true
+  destructuring: true
+  templateStrings: true
 rules:
   indent:
     - 2
@@ -9,6 +15,7 @@ rules:
   semi:
     - 2
     - always
+  no-var: 2
 env:
   node: true
   mocha: true
