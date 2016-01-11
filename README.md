@@ -8,14 +8,24 @@
 [![Dependency Status](https://david-dm.org/kellyselden/ember-i18n-csv.svg)](https://david-dm.org/kellyselden/ember-i18n-csv)
 [![devDependency Status](https://david-dm.org/kellyselden/ember-i18n-csv/dev-status.svg)](https://david-dm.org/kellyselden/ember-i18n-csv#info=devDependencies)
 
+JSON to CSV and vice-versa for ember-i18n
+
+###Installation
+
+```sh
+npm install -g ember-i18n-csv
+```
+
+###Example
+
 Export your ember-i18n localization files to a CSV file for translators:
 
-```
-node to-csv path_to_locales_folder i18n.csv
+```sh
+ember-i18n-csv to-csv --locales-path=path_to_locales_folder --csv-path=i18n.csv
 ```
 
 and import back in when you get them back:
 
-```
-node to-js i18n.csv path_to_locales_folder [--jshint-ignore]
+```sh
+ember-i18n-csv to-js --csv-path=i18n.csv --locales-path=path_to_locales_folder [--jshint-ignore]
 ```
