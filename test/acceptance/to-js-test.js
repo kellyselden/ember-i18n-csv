@@ -1,30 +1,32 @@
-var expect = require('chai').expect;
-var spawn = require('child_process').spawn;
-var fs = require('fs-extra');
-var compareDirs = require('../helpers/compare-dirs');
+import { expect } from 'chai';
+import { spawn } from 'child_process';
+import fs from 'fs-extra';
+import { areDirsEqual } from 'fs-equal';
 
-describe('to-js', function() {
+describe('acceptance - to-js', function() {
+  this.timeout(30000);
+
   beforeEach(function() {
     fs.emptyDirSync('tmp/locales');
   });
 
   it('works', function(done) {
-    var ps = spawn(process.execPath, [
+    let ps = spawn(process.execPath, [
       'bin/ember-i18n-csv.js',
       'to-js',
       '--csv-path=test/fixtures/i18n.csv',
       '--locales-path=tmp/locales'
     ]);
 
-    var out = '';
-    var err = '';
-    ps.stdout.on('data', function(buffer) { out += buffer; });
-    ps.stderr.on('data', function(buffer) { err += buffer; });
+    let out = '';
+    let err = '';
+    ps.stdout.on('data', buffer => out += buffer);
+    ps.stderr.on('data', buffer => err += buffer);
 
-    ps.on('exit', function() {
+    ps.on('exit', () => {
       expect(out).to.equal('');
       expect(err).to.equal('');
-      compareDirs('tmp/locales', 'test/fixtures/locales').then(function(areSame) {
+      areDirsEqual('tmp/locales', 'test/fixtures/locales').then(areSame => {
         expect(areSame).to.be.true;
         done();
       }).catch(done);
@@ -32,7 +34,7 @@ describe('to-js', function() {
   });
 
   it('handles option --jshint-ignore', function(done) {
-    var ps = spawn(process.execPath, [
+    let ps = spawn(process.execPath, [
       'bin/ember-i18n-csv.js',
       'to-js',
       '--csv-path=test/fixtures/i18n.csv',
@@ -40,15 +42,15 @@ describe('to-js', function() {
       '--jshint-ignore'
     ]);
 
-    var out = '';
-    var err = '';
-    ps.stdout.on('data', function(buffer) { out += buffer; });
-    ps.stderr.on('data', function(buffer) { err += buffer; });
+    let out = '';
+    let err = '';
+    ps.stdout.on('data', buffer => out += buffer);
+    ps.stderr.on('data', buffer => err += buffer);
 
-    ps.on('exit', function() {
+    ps.on('exit', () => {
       expect(out).to.equal('');
       expect(err).to.equal('');
-      compareDirs('tmp/locales', 'test/fixtures/locales-jshint-ignore').then(function(areSame) {
+      areDirsEqual('tmp/locales', 'test/fixtures/locales-jshint-ignore').then(areSame => {
         expect(areSame).to.be.true;
         done();
       }).catch(done);
