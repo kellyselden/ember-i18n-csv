@@ -28,8 +28,8 @@
   "homepage": "https://github.com/kellyselden/ember-i18n-csv#readme",
   "dependencies": {
     "babel-register": "^6.0.0",
-    "csv-parse": "0.0.6",
-    "csv-stringify": "0.0.6",
+    "csv-parse": "^1.0.0",
+    "csv-stringify": "0.0.8",
     "denodeify": "^1.0.0",
     "eol": "0.2.0",
     "promise": "^7.0.0",
