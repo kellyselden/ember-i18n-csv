@@ -14,6 +14,10 @@ export default {
       "node2-2-1": "test",
       "node2-2-2": "test"
     }
+  },
+  "weekday": {
+    "tuesday": "Dinsdag",
+    "saturday": "Zaterdag"
   }
 };
 
