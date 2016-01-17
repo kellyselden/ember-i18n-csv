@@ -2,7 +2,7 @@
 
 export default {
   "node1": {
-    "node1-1": "Industries",
+    "node1-1": "Indústrias",
     "node1-2": {
       "node1-2-1": "test",
       "node1-2-2": "test"
@@ -16,8 +16,8 @@ export default {
     }
   },
   "weekday": {
-    "tuesday": "Tuesday",
-    "saturday": "Saturday"
+    "tuesday": "Terça",
+    "saturday": "Sábado"
   }
 };
 
