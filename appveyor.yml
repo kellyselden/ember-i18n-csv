@@ -27,10 +27,9 @@ test_script:
   - npm --version
   - npm test
 
-# disabled until cache busting exists
 # http://help.appveyor.com/discussions/questions/1310-delete-cache
-# cache:
-#   - node_modules
+cache:
+  - node_modules -> .appveyorcachesucks
 
 # Don't actually build.
 build: off

@@ -4,7 +4,7 @@ import fs from 'fs-extra';
 import { areFilesEqual } from 'fs-equal';
 
 describe('acceptance - to-csv', function() {
-  this.timeout(3000);
+  this.timeout(30000);
 
   beforeEach(function() {
     fs.emptyDirSync('tmp');
