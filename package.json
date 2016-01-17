@@ -42,7 +42,8 @@
     "chai": "^3.0.0",
     "coveralls": "^2.0.0",
     "eslint-mocha": "0.0.5",
-    "fs-equal": "0.0.2",
+    "fs-equal": "0.0.4",
+    "fs-extra": "0.26.4",
     "isparta": "^4.0.0"
   },
   "keywords": [

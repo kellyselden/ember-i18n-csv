@@ -1,10 +1,5 @@
-coverage
-lib
-test
-tmp
-.babelrc
-.eslintrc.yml
-.gitignore
-.istanbul.yml
-.travis.yml
-appveyor.yml
+/coverage
+/lib
+/test
+/tmp
+/*.*
