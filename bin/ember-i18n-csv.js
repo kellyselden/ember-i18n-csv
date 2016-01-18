@@ -4,6 +4,7 @@
 var emberI18nCsv = require('../dist/ember-i18n-csv').default;
 
 var argv = require('yargs')
+  .demand(1)
   .options({
     'jshint-ignore': {
       type: 'boolean'
