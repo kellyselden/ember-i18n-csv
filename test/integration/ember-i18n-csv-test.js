@@ -16,6 +16,24 @@ describe('integration - ember-i18n-csv', function() {
         });
       });
     });
+
+    describe('empty folders', function() {
+      beforeEach(function() {
+        fs.emptyDirSync('test/fixtures/locales/unknown');
+      });
+
+      afterEach(function() {
+        fs.rmdirSync('test/fixtures/locales/unknown');
+      });
+
+      it('ignores empty folders', function() {
+        return emberI18nCsv('to-csv', 'test/fixtures/locales', 'tmp/i18n.csv').then(() => {
+          return areFilesEqual('tmp/i18n.csv', 'test/fixtures/i18n.csv').then(areSame => {
+            expect(areSame).to.be.true;
+          });
+        });
+      });
+    });
   });
 
   describe('to-js', function() {
