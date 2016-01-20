@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-/*eslint no-var: 0*/
+/* eslint no-var: 0 */
 
 var emberI18nCsv = require('../dist/ember-i18n-csv').default;
 
