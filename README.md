@@ -8,7 +8,7 @@
 [![Dependency Status](https://david-dm.org/kellyselden/ember-i18n-csv.svg)](https://david-dm.org/kellyselden/ember-i18n-csv)
 [![devDependency Status](https://david-dm.org/kellyselden/ember-i18n-csv/dev-status.svg)](https://david-dm.org/kellyselden/ember-i18n-csv#info=devDependencies)
 
-JSON to CSV and vice-versa for ember-i18n
+JSON to CSV and vice-versa for [ember-i18n](https://github.com/jamesarosen/ember-i18n)
 
 ###Installation
 
