@@ -29,3 +29,22 @@ and import back in when you get them back:
 ```sh
 ember-i18n-csv to-js --csv-path=i18n.csv --locales-path=path_to_locales_folder [--jshint-ignore]
 ```
+
+###Excel
+
+It's not as simple as opening, editing, and saving in Excel.
+
+* Import
+  1. blank workbook
+  * import data from text
+  * delimited
+  * 65001
+  * comma
+  * shift click select all columns
+  * change from general to text (general tries to guess types ie. will convert "true" to "TRUE")
+* Edit
+  * nothing special
+* Export
+  1. save as
+  * CSV (Command delimited)
+  * the resulting file will not be utf8. convert to utf8 (notepad++ for me)
