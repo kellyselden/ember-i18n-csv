@@ -1,0 +1,9 @@
+key,en-us,nl-nl,pt-br
+node1.node1-1,Industries,Industrieën,Indústrias
+node1.node1-2.node1-2-1,,test,test
+node1.node1-2.node1-2-2,test,test,test
+node2.node2-1,test,,test
+node2.node2-2.node2-2-1,test,test,test
+node2.node2-2.node2-2-2,test,test,test
+weekday.tuesday,Tuesday,Dinsdag,Terça
+weekday.saturday,Saturday,Zaterdag,
