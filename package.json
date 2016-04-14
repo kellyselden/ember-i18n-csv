@@ -32,7 +32,7 @@
     "csv-stringify": "^1.0.0",
     "denodeify": "^1.0.0",
     "eol": "0.2.0",
-    "lodash": "^4.0.0",
+    "lodash": "^4.11.1",
     "promise": "^7.0.0",
     "yargs": "^4.0.0"
   },
