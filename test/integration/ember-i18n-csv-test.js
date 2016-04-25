@@ -17,6 +17,14 @@ describe('integration - ember-i18n-csv', function() {
       });
     });
 
+    it('handles option --only-missing', function() {
+      return emberI18nCsv('to-csv', 'test/fixtures/locales-only-missing', 'tmp/i18n.csv', { onlyMissing: true }).then(() => {
+        return areFilesEqual('tmp/i18n.csv', 'test/fixtures/i18n-only-missing.csv').then(areSame => {
+          expect(areSame).to.be.true;
+        });
+      });
+    });
+
     describe('empty folders', function() {
       beforeEach(function() {
         fs.emptyDirSync('test/fixtures/locales/unknown');
@@ -53,6 +61,23 @@ describe('integration - ember-i18n-csv', function() {
       return emberI18nCsv('to-js', 'tmp/locales', 'test/fixtures/i18n.csv', { ignoreJshint: true }).then(() => {
         return areDirsEqual('tmp/locales', 'test/fixtures/locales-jshint-ignore').then(areSame => {
           expect(areSame).to.be.true;
+        });
+      });
+    });
+    describe('merge', function() {
+      beforeEach(function() {
+        fs.copySync('test/fixtures/locales-with-missing-keys', 'tmp/locales', { clobber: true });
+      });
+
+      afterEach(function() {
+        fs.emptyDirSync('tmp');
+      });
+
+      it('handles option --merge', function() {
+        return emberI18nCsv('to-js', 'tmp/locales', 'test/fixtures/i18n-merge.csv', { merge: true }).then(() => {
+          return areDirsEqual('tmp/locales', 'test/fixtures/locales-merge').then(areSame => {
+            expect(areSame).to.be.true;
+          });
         });
       });
     });
