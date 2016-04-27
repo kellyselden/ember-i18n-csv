@@ -44,7 +44,7 @@
     "coveralls": "^2.0.0",
     "eslint-mocha": "0.0.8",
     "fs-equal": "0.0.4",
-    "fs-extra": "0.28.0",
+    "fs-extra": "0.29.0",
     "isparta": "^4.0.0",
     "mocha": "^2.0.0"
   },
