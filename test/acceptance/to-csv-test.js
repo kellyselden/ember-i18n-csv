@@ -65,4 +65,28 @@ describe('acceptance - to-csv', function() {
       });
     });
   });
+
+  it('handles option --only-missing', function(done) {
+    let ps = spawn(process.execPath, [
+      'bin/ember-i18n-csv.js',
+      'to-csv',
+      '--locales-path=test/fixtures/locales-only-missing',
+      '--csv-path=tmp/i18n.csv',
+      '--only-missing'
+    ]);
+
+    let out = '';
+    let err = '';
+    ps.stdout.on('data', buffer => out += buffer);
+    ps.stderr.on('data', buffer => err += buffer);
+
+    ps.on('exit', () => {
+      expect(out).to.equal('');
+      expect(err).to.equal('');
+      areFilesEqual('tmp/i18n.csv', 'test/fixtures/i18n-only-missing.csv').then(areSame => {
+        expect(areSame).to.be.true;
+        done();
+      }).catch(done);
+    });
+  });
 });
