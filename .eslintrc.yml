@@ -1,9 +1,6 @@
-ecmaFeatures:
-  modules: true
-  blockBindings: true
-  arrowFunctions: true
-  destructuring: true
-  templateStrings: true
+parserOptions:
+  ecmaVersion: 6
+  sourceType: 'module'
 rules:
   # possible errors
   no-extra-parens: 2
@@ -43,18 +40,17 @@ rules:
   semi:
     - 2
     - always
-  space-after-keywords: 2
+  keyword-spacing: 2
   space-before-blocks: 2
   space-before-function-paren:
     - 2
     - never
-  space-before-keywords: 2
   space-in-parens: 2
   space-infix-ops: 2
-  space-return-throw-case: 2
   space-unary-ops: 2
   spaced-comment: 2
 env:
+  es6: true
   node: true
   mocha: true
 extends: 'eslint:recommended'
