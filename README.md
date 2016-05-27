@@ -31,6 +31,7 @@ ember-i18n-csv to-js --csv-path=i18n.csv --locales-path=path_to_locales_folder [
 ```
 
 `--missing-only` means the generated CSV will only contain keys where there is a missing translation in one of the locales
+`--jshint-ignore` will put ignore comments in your js files, useful if you lint for single quotes
 `--merge` means that any keys present in the CSV will overwrite the ones present in the destination locale files but if the key is not present then the existing key will be kept in place. 
 
 ###Excel
