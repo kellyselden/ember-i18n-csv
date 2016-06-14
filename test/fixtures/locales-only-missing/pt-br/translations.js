@@ -10,7 +10,7 @@ export default {
   },
   "node2": {
     "node2-2": {
-      "node2-2-1": "test",
+      "node2-2-1": "test"
     }
   },
   "weekday": {
