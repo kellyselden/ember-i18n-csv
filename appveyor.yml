@@ -12,6 +12,10 @@ platform:
   - x86
   - x64
 
+branches:
+  only:
+    - master
+
 # Fix line endings in Windows. (runs before repo cloning)
 init:
   - git config --global core.autocrlf true
