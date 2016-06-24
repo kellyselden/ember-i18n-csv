@@ -14,9 +14,6 @@ var argv = require('yargs')
     },
     'merge': {
       type: 'boolean'
-    },
-    'dotted':{
-      type: 'boolean'
     }
   })
   .argv;
@@ -27,13 +24,11 @@ var csvPath = argv['csv-path'];
 var ignoreJshint = argv['jshint-ignore'];
 var onlyMissing = argv['only-missing'];
 var merge = argv['merge'];
-var dotted = argv['dotted'];
 
 var options = {
   ignoreJshint: ignoreJshint,
   onlyMissing: onlyMissing,
-  merge: merge,
-  dotted:dotted
+  merge: merge
 };
 
 emberI18nCsv(direction, localesPath, csvPath, options);
