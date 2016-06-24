@@ -64,7 +64,6 @@ describe('integration - ember-i18n-csv', function() {
         });
       });
     });
-
     describe('merge', function() {
       beforeEach(function() {
         fs.copySync('test/fixtures/locales-with-missing-keys', 'tmp/locales', { clobber: true });
@@ -81,14 +80,6 @@ describe('integration - ember-i18n-csv', function() {
           });
         });
       });
-
-      it('handles option --dotted', function() {
-      return emberI18nCsv('to-js', 'tmp/locales', 'test/fixtures/i18n-dotted.csv', { dotted: true }).then(() => {
-        return areDirsEqual('tmp/locales', 'test/fixtures/locales-dotted').then(areSame => {
-          expect(areSame).to.be.true;
-        });
-      });
-    });
     });
   });
 
