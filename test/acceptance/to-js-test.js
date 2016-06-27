@@ -81,4 +81,27 @@ describe('acceptance - to-js', function() {
       }).catch(done);
     });
   });
+  it('handles option --dotted', function(done) {
+    let ps = spawn(process.execPath, [
+      'bin/ember-i18n-csv.js',
+      'to-js',
+      '--csv-path=test/fixtures/i18n-dotted.csv',
+      '--locales-path=tmp/locales',
+      '--dotted'
+    ]);
+
+    let out = '';
+    let err = '';
+    ps.stdout.on('data', buffer => out += buffer);
+    ps.stderr.on('data', buffer => err += buffer);
+
+    ps.on('exit', () => {
+      expect(out).to.equal('');
+      expect(err).to.equal('');
+      areDirsEqual('tmp/locales', 'test/fixtures/locales-dotted').then(areSame => {
+        expect(areSame).to.be.true;
+        done();
+      }).catch(done);
+    });
+  });
 });
