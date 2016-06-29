@@ -81,11 +81,12 @@ describe('acceptance - to-js', function() {
       }).catch(done);
     });
   });
+
   it('handles option --dotted', function(done) {
     let ps = spawn(process.execPath, [
       'bin/ember-i18n-csv.js',
       'to-js',
-      '--csv-path=test/fixtures/i18n-dotted.csv',
+      '--csv-path=test/fixtures/i18n.csv',
       '--locales-path=tmp/locales',
       '--dotted'
     ]);
