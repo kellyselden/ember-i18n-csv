@@ -29,7 +29,7 @@ test_script:
 
 # http://help.appveyor.com/discussions/questions/1310-delete-cache
 cache:
-  - node_modules -> .appveyorcachesucks
+  - node_modules -> package.json
 
 # Don't actually build.
 build: off
