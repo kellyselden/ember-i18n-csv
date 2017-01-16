@@ -19,6 +19,7 @@ rules:
   array-bracket-spacing: 2
   brace-style: 2
   camelcase: 2
+  comma-dangle: 2
   comma-spacing: 2
   eol-last: 2
   indent:
