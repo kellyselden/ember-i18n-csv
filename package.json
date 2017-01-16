@@ -61,7 +61,7 @@
     "i18n"
   ],
   "engines": {
-    "node": ">= 0.12.0"
+    "node": ">= 4"
   },
   "greenkeeper": {
     "ignore": ["eslint"]
