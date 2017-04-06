@@ -5,6 +5,7 @@
 [![Code Climate](https://codeclimate.com/github/kellyselden/ember-i18n-csv/badges/gpa.svg)](https://codeclimate.com/github/kellyselden/ember-i18n-csv)
 [![Coverage Status](https://coveralls.io/repos/kellyselden/ember-i18n-csv/badge.svg?branch=master&service=github)](https://coveralls.io/github/kellyselden/ember-i18n-csv?branch=master)
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/kellyselden/ember-i18n-csv.svg)](https://greenkeeper.io/)
 [![npm version](https://badge.fury.io/js/ember-i18n-csv.svg)](https://badge.fury.io/js/ember-i18n-csv)
 [![dependencies Status](https://david-dm.org/kellyselden/ember-i18n-csv/status.svg)](https://david-dm.org/kellyselden/ember-i18n-csv)
 [![devDependencies Status](https://david-dm.org/kellyselden/ember-i18n-csv/dev-status.svg)](https://david-dm.org/kellyselden/ember-i18n-csv?type=dev)
