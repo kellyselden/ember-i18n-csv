@@ -10,8 +10,6 @@
     "prebuild": "rimraf dist",
     "build": "babel lib -d dist",
     "prepublish": "npm run build",
-    "pretest": "npm run build",
-    "precover": "npm run build",
     "test": "eslint-mocha --eslint-args=\"@(bin|lib)/**/*.js test/!(fixtures)/**/*.js\" --mocha-args=\"--compilers js:babel-register test/**/*-test.js\"",
     "cover": "babel-node node_modules/isparta/bin/isparta cover --include-all-sources --report html --report lcov node_modules/eslint-mocha/bin/eslint-mocha.js -- --eslint-args=\"@(bin|lib)/**/*.js test/!(fixtures)/**/*.js\" --mocha-args=\"--compilers js:babel-register test/**/*-test.js\"",
     "debug": "node debug node_modules/mocha/bin/_mocha --no-timeouts --compilers js:babel-register \"test/integration/**/*-test.js\"",
