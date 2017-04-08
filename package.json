@@ -44,7 +44,7 @@
     "chai": "^3.0.0",
     "coveralls": "^2.0.0",
     "eslint": "^3.0.0",
-    "eslint-mocha": "0.1.0",
+    "eslint-mocha": "0.2.1",
     "fs-equal": "0.0.4",
     "fs-extra": "^2.0.0",
     "isparta": "^4.0.0",
