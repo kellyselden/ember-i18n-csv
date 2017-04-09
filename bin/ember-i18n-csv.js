@@ -1,9 +1,9 @@
 #!/usr/bin/env node
-/* eslint no-var: 0 */
+'use strict';
 
-var emberI18nCsv = require('../dist/ember-i18n-csv').default;
+const emberI18nCsv = require('../dist/ember-i18n-csv').default;
 
-var argv = require('yargs')
+let argv = require('yargs')
   .demand(1)
   .options({
     'jshint-ignore': {
@@ -21,19 +21,19 @@ var argv = require('yargs')
   })
   .argv;
 
-var direction = argv._[0];
-var localesPath = argv['locales-path'];
-var csvPath = argv['csv-path'];
-var ignoreJshint = argv['jshint-ignore'];
-var onlyMissing = argv['only-missing'];
-var merge = argv['merge'];
-var dotted = argv['dotted'];
+let direction = argv._[0];
+let localesPath = argv['locales-path'];
+let csvPath = argv['csv-path'];
+let ignoreJshint = argv['jshint-ignore'];
+let onlyMissing = argv['only-missing'];
+let merge = argv['merge'];
+let dotted = argv['dotted'];
 
-var options = {
-  ignoreJshint: ignoreJshint,
-  onlyMissing: onlyMissing,
-  merge: merge,
-  dotted: dotted
+let options = {
+  ignoreJshint,
+  onlyMissing,
+  merge,
+  dotted
 };
 
 emberI18nCsv(direction, localesPath, csvPath, options);
