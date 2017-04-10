@@ -44,6 +44,7 @@
     "chai": "^3.0.0",
     "coveralls": "^2.0.0",
     "eslint": "^3.0.0",
+    "eslint-config-sane": "^0.1.0",
     "eslint-mocha": "0.2.2",
     "fs-equal": "1.0.0",
     "fs-extra": "^2.0.0",
