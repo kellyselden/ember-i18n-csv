@@ -41,7 +41,7 @@
     "babel-preset-es2015": "^6.0.0",
     "babel-preset-stage-2": "^6.0.0",
     "babel-register": "^6.0.0",
-    "chai": "^3.0.0",
+    "chai": "^4.0.0",
     "coveralls": "^2.0.0",
     "eslint": "^3.0.0",
     "eslint-config-sane": "^0.1.0",
