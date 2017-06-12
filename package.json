@@ -44,7 +44,7 @@
     "babel-register": "^6.0.0",
     "chai": "^4.0.1",
     "coveralls": "^2.0.0",
-    "eslint": "^3.0.0",
+    "eslint": "^4.0.0",
     "eslint-config-sane": "^0.1.0",
     "fs-equal": "1.0.0",
     "fs-extra": "^3.0.0",
