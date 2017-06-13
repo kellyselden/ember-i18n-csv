@@ -10,11 +10,12 @@
     "prebuild": "rimraf dist",
     "build": "babel lib -d dist",
     "prepublish": "npm run build",
-    "test": "eslint-mocha --eslint-args=\"bin lib test/!(fixtures)/**/*\" --mocha-args=\"--compilers js:babel-register test/**/*-test.js\"",
-    "cover": "babel-node node_modules/isparta/bin/isparta cover --include-all-sources --report html --report lcov node_modules/eslint-mocha/dist/bin/eslint-mocha.js -- --eslint-args=\"bin lib test/!(fixtures)/**/*\" --mocha-args=\"--compilers js:babel-register test/**/*-test.js\"",
+    "test": "mocha --compilers js:babel-register test/**/*-test.js",
+    "posttest": "npm run lint",
+    "cover": "babel-node node_modules/isparta/bin/isparta cover --include-all-sources --report html --report lcov node_modules/mocha/bin/_mocha -- --compilers js:babel-register test/**/*-test.js",
     "debug": "node debug node_modules/mocha/bin/_mocha --no-timeouts --compilers js:babel-register \"test/integration/**/*-test.js\"",
     "prelint": "eslint --version",
-    "lint": "eslint bin lib test/!(fixtures)/**/*",
+    "lint": "eslint bin lib \"test/!(fixtures)/**/*\"",
     "lint:fix": "npm run lint -- --fix"
   },
   "repository": {
@@ -45,7 +46,6 @@
     "coveralls": "^2.0.0",
     "eslint": "^3.0.0",
     "eslint-config-sane": "^0.1.0",
-    "eslint-mocha": "0.2.2",
     "fs-equal": "1.0.0",
     "fs-extra": "^3.0.0",
     "isparta": "^4.0.0",
