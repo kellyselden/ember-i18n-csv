@@ -15,7 +15,7 @@
     "cover": "babel-node node_modules/isparta/bin/isparta cover --include-all-sources --report html --report lcov node_modules/mocha/bin/_mocha -- --compilers js:babel-register test/**/*-test.js",
     "debug": "node debug node_modules/mocha/bin/_mocha --no-timeouts --compilers js:babel-register \"test/integration/**/*-test.js\"",
     "prelint": "eslint --version",
-    "lint": "eslint bin lib \"test/!(fixtures)/**/*\"",
+    "lint": "eslint bin lib test",
     "lint:fix": "npm run lint -- --fix"
   },
   "repository": {
