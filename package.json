@@ -34,7 +34,7 @@
     "denodeify": "^1.0.0",
     "eol": "0.9.0",
     "lodash": "^4.0.0",
-    "promise": "^7.0.0",
+    "promise": "^8.0.0",
     "yargs": "^8.0.1"
   },
   "devDependencies": {
