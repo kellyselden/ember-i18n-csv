@@ -46,7 +46,7 @@
     "coveralls": "^2.0.0",
     "eslint": "^4.0.0",
     "eslint-config-sane": "^0.1.0",
-    "fs-equal": "1.0.0",
+    "fs-equal": "1.1.0",
     "fs-extra": "^4.0.0",
     "isparta": "^4.0.0",
     "mocha": "^3.0.0",
