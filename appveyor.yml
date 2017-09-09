@@ -11,6 +11,7 @@ platform:
 branches:
   only:
     - master
+    - /^greenkeeper\/.*$/
 
 # Fix line endings in Windows. (runs before repo cloning)
 init:
