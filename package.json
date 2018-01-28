@@ -62,5 +62,11 @@
   ],
   "engines": {
     "node": ">= 4"
+  },
+  "greenkeeper": {
+    "ignore": [
+      "csv-parse",
+      "csv-stringify"
+    ]
   }
 }
