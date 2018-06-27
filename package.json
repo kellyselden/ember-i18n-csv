@@ -9,7 +9,7 @@
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "babel lib -d dist",
-    "prepublish": "npm run build",
+    "prepare": "npm run build",
     "test": "mocha --require babel-register test/**/*-test.js",
     "posttest": "npm run lint",
     "cover": "babel-node node_modules/isparta/bin/isparta cover --include-all-sources --report html --report lcov node_modules/mocha/bin/_mocha -- --require babel-register test/**/*-test.js",
