@@ -23,7 +23,7 @@ npm install -g ember-i18n-csv
 Export your ember-i18n localization files to a CSV file for translators:
 
 ```sh
-ember-i18n-csv to-csv --locales-path=path_to_locales_folder --csv-path=i18n.csv [--missing-only]
+ember-i18n-csv to-csv --locales-path=path_to_locales_folder --csv-path=i18n.csv [--only-missing]
 ```
 
 and import back in when you get them back:
@@ -32,7 +32,7 @@ and import back in when you get them back:
 ember-i18n-csv to-js --csv-path=i18n.csv --locales-path=path_to_locales_folder [--jshint-ignore] [--merge]
 ```
 
-`--missing-only` means the generated CSV will only contain keys where there is a missing translation in one of the locales
+`--only-missing` means the generated CSV will only contain keys where there is a missing translation in one of the locales
 
 `--jshint-ignore` will put ignore comments in your js files, useful if you lint for single quotes
 
