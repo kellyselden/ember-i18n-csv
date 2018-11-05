@@ -61,7 +61,7 @@
     "i18n"
   ],
   "engines": {
-    "node": ">= 4"
+    "node": ">= 6"
   },
   "greenkeeper": {
     "ignore": [
